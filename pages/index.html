@@ -31,11 +31,48 @@
         </div>
       </div>
     </header>
-    <div class="Content">
-      Receitas Diversas
+      <main>
+    <ul id="myUL">
+      <h3>Lista de receitas</h3>
+      <li><a href="#" onclick="myfuncao()">Lasanha de Brocolis</li>
+      <li><a href="#">Frango Xadres</a></li>
+      <li><a href="#">Bolo de Chocolate Vegano</a></li>
+      <li><a href="#">Tilapia Empanada</a></li>
+      <li><a href="#">Salada Royal</a></li>
+      <li><a href="#">Brigadeiro 0 Lactose</a></li>
+      <li><a href="#">Cookie Vegano</a></li>
+      <li><a href="#">Pão integral Caseiro</a></li>
+      <li><a href="#">Pão de queijo Vegano</a></li>
+      <li><a href="#">Batata Frita Sequinha</a></li>
+      <li><a href="#">Suco de Couve</a></li>
+      <li><a href="#">Nuggets de Milho</a></li>
+      <li><a href="#">Lasanha à Bolonhesa</a></li>
+    </ul>
+  </main>
     </div>
     <footer>
       Informações do site
     </footer>
+   <script>
+    function myFunction() {
+      // Declaração de Variaveis
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+
+      
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
   </body>
 </html>
